@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         print('HTTP method: ', http_method)
         print('Path: ', path)
 
-        if http_method == 'GET' and path == '/keywordResearch':
+        if http_method == 'GET' and path == '/testGet':
             # get parameters
             query_params = event['queryStringParameters']
             print('query_params: ', query_params)
@@ -22,7 +22,7 @@ def lambda_handler(event, context):
                     'request_params': query_params
                 }
             }
-        elif http_method == 'POST' and path == '/contentCluster' and valid_json(event['body']):
+        elif http_method == 'POST' and path == '/testPost' and valid_json(event['body']):
             body = event['body']
             print('body: ', body)
 
